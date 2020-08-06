@@ -8,10 +8,7 @@ ActiveAdmin.register Theloai do
   permit_params :tentl
   filter :tentl
   form do |f|
-    f.inputs do 
       f.input :tentl
-    end
-    f.actions
   end
   
   #

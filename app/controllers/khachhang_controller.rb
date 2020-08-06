@@ -5,8 +5,14 @@ class KhachhangController < ApplicationController
       kh = Khachhang.create(tenkh: "Trong", diachi: "Trong", gioitinh: "Nam", sodt: "0123456789", user_id: current_user.id)
     end 
     @khachhang = Khachhang.where(user_id: current_user.id).limit(1)
+    @donhang = Donhang.where(khachhang_id: @khachhang[0].id)
     @khUpdate = Khachhang.new
   end
+
+  def chitiet
+    @id = params[:id]
+    @ctdh = Sach.select("*").joins(:ctdhs).where(ctdhs: {donhang_id: @id.to_i})
+  end 
 
   def update
     respond_to do |format|

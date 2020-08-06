@@ -46,6 +46,21 @@
                        <%end%>
                     </div>
                 </div>
+                <div class="col-lg-4">
+                    <div style="align-content: center; box-shadow: 0px 0px 3px 0px rgba(88, 88, 88, 0.3); padding: 5px 10px; text-shadow: darkgrey">
+                    <h3>Lịch sử mua hàng</h3>
+                        <%@donhang.each do |dh|%> 
+                            <a href="/khachhang/chitiet/<%=dh.id%>">
+                                <div style="padding: 10px; border-style:ridge; margin-top: 10px" >
+                                    <div>Mã đơn hàng: <%=dh.id%></div>
+                                    <div>Ngày đặt: <%=dh.ngaylap%></div>
+                                    <div>Hình thức thanh toán: <%=dh.httt%></div>
+                                    <div>Tổng tiền: <%=dh.tongtien%></div>
+                                </div>
+                            </a>
+                        <%end%>                      
+                    </div>
+                </div>
                 </div>
             </div>
             <div class="clearfix"></div>
