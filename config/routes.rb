@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  get 'dathang/index'
-  get 'khachhang/index'
+  get 'timkiem/index', to: 'timkiem#index'
+  get 'dathang/index', to: 'dathang#index'
+  get 'khachhang/index', to:'khachhang#index'
   get 'khachhang/chitiet/:id', to: 'khachhang#chitiet'
   devise_for :users
   devise_scope :user do
