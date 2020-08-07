@@ -33,6 +33,7 @@ gem 'will_paginate-bootstrap', '>= 1.0.0'
 gem 'devise'
 gem 'activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem 'carrierwave', '~> 2.0'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

@@ -14,7 +14,7 @@ ActiveAdmin.register Sach do
     f.input :tensach,label: "Tên sách", :input_html => { :class => 'form-control'}
     f.input :mota, as: :text, label: "Mô tả", :input_html => { :class => 'form-control'}
     f.input :giaban, label: "Giá bán", :input_html => { :class => 'form-control'}
-    f.input :hinhanh, label: "Hình ảnh", :input_html => { :class => 'form-control'}
+    f.input :hinhanh, as: :file, label: "Hình ảnh", :input_html => { :class => 'form-control'}
     f.actions
   end 
   index title: "Sách"

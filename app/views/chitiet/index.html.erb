@@ -18,7 +18,7 @@
                 <div class="col-sm-9">
                     <div class="row">
                         <div class="col-sm-4">
-                            <%= image_tag "sach/#{@sach[0].hinhanh}", :height => "250px"%>
+                            <%= image_tag "#{@sach[0].hinhanh}", :height => "250px"%>
                         </div>
                         <div class="col-sm-8">
                             <div class="single-item-body">
@@ -75,7 +75,7 @@
                                     <div class="single-item">
                                         <div class="single-item-header">
                                             <a href="/chitiet/index/<%=s.id%>">
-                                            <%= image_tag "sach/#{s.hinhanh}", :height => "320px", :width => "240px"%>
+                                            <%= image_tag "#{s.hinhanh}", :height => "320px", :width => "240px"%>
                                             </a>
                                         </div>
                                         <div class="single-item-body" style="padding-top:30px">

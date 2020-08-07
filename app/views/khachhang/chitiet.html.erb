@@ -19,7 +19,7 @@
                     <td>
                         <a href="/chitiet/index/<%=ct.id%>" target="_blank" class="ng-binding"><%=ct.tensach%></a>
                     </td>
-                    <td><img src="<%=image_path("sach/#{ct.hinhanh}")%>" class="img-responsive" style="height:40px;"></td>
+                    <td><img src="<%=image_path("#{ct.hinhanh}")%>" class="img-responsive" style="height:40px;"></td>
                     <td class="text-center"><strong class="ng-binding"><%=ct.Soluong%></strong></td>
                     <td class="ng-binding"><%=ct.giaban%> VND</td>
                     <td class="text-right ng-binding"><%=ct.giaban*ct.Soluong%>VND</td>
