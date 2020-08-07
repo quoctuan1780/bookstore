@@ -5,12 +5,33 @@ ActiveAdmin.register Theloai do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :tentl
-  filter :tentl
-  form do |f|
-      f.input :tentl
+  permit_params :id, :tentl, sach_ids: []  
+  controller do
+    def new
+      @theloai = Theloai.new
+      super
+    end
+
+    def create
+      @theloai = Theloai.new(params.require(:theloai).permit(:tentl))
+      super
+    end
+
+    def edit
+      @theloai = Theloai.find params[:id]
+      super
+    end
+
+    def show
+      @theloai = Theloai.find params[:id]
+      super
+    end
+
+    def update
+      @the_loai = Theloai.find params[:id]
+      super
+    end
   end
-  
   #
   # or
   #

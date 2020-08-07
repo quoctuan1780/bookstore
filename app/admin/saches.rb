@@ -6,7 +6,33 @@ ActiveAdmin.register Sach do
   # Uncomment all parameters which should be permitted for assignment
   #
   permit_params :tensach, :mota, :giaban, :hinhanh, :theloai_id
+  controller do
+    def new
+      @sach = Sach.new
+      super
+    end
 
+    def create
+      @theloai = Theloai.all
+      @sach = Sach.new(params.require(:sach).permit(:tensach, :mota, :giaban, :hinhanh, :theloai_id))
+      super
+    end
+
+    def edit
+      @sach = Sach.find params[:id]
+      super
+    end
+
+    def show
+      @sach = Sach.find params[:id]
+      super
+    end
+
+    def update
+      @sach = Sach.find params[:id]
+      super
+    end
+  end
   # index do
   #   selectable_column
   #   id_column
