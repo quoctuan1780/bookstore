@@ -6,6 +6,18 @@ ActiveAdmin.register Sach do
   # Uncomment all parameters which should be permitted for assignment
   #
   permit_params :tensach, :mota, :giaban, :hinhanh, :theloai_id
+  filter :theloai, label: "Thể loại", :as => :select, :collection => Theloai.all.collect {|tl| [tl.tentl, tl.id] }
+  filter :tensach, label: "Tên sách"
+  filter :giaban, label: "Giá bán"
+  form title: 'Thêm sách' do |f|
+    f.input :theloai, label: "Thể loại", :as => :select, :collection => Theloai.all.collect {|tl| [tl.tentl, tl.id] }, :input_html => { :class => 'form-control'}
+    f.input :tensach,label: "Tên sách", :input_html => { :class => 'form-control'}
+    f.input :mota, as: :text, label: "Mô tả", :input_html => { :class => 'form-control'}
+    f.input :giaban, label: "Giá bán", :input_html => { :class => 'form-control'}
+    f.input :hinhanh, label: "Hình ảnh", :input_html => { :class => 'form-control'}
+    f.actions
+  end 
+  index title: "Sách"
   controller do
     def new
       @sach = Sach.new

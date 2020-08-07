@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_06_071352) do
+ActiveRecord::Schema.define(version: 2020_08_07_144221) do
 
   create_table "active_admin_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "namespace"
@@ -87,7 +87,7 @@ ActiveRecord::Schema.define(version: 2020_08_06_071352) do
 
   create_table "saches", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "tensach"
-    t.string "mota"
+    t.text "mota"
     t.integer "giaban"
     t.string "hinhanh"
     t.datetime "created_at", default: -> { "current_timestamp()" }, null: false

@@ -5,7 +5,14 @@ ActiveAdmin.register Theloai do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :id, :tentl, sach_ids: []  
+  permit_params :tentl, sach_ids: []  
+  filter :saches, label: "Sách", :as => :select, :collection => Sach.all.collect {|s| [s.tensach, s.id] }
+  filter :tentl, label: "Tên thể loại" 
+  index title: "Thể loại"
+  form :title => 'Thêm thể loại' do |f|
+    f.input :tentl, label: "Tên thể loại", :input_html => { :class => 'form-control'}
+    f.actions
+  end 
   controller do
     def new
       @theloai = Theloai.new
