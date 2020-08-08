@@ -1,6 +1,5 @@
 class CheckoutController < ApplicationController
-  before_action :authenticate_user!
-
+  
   def index
     @cart = session[:cart]
     session[:tongtien] = 0

@@ -2,7 +2,7 @@ class HomeController < ApplicationController
   before_action :khoitaosession
 
   def index
-    @sach = Sach.paginate(:page => params[:page], per_page: 4)
+    @sach = Sach.paginate(:page => params[:page], per_page: 8)
     @banner = Banner.all
   end
 
